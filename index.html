@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홍람빈 홈페이지</title>
+<meta name="description" content="여행 · 콘텐츠 · 글로벌을 잇는 기획자 홍람빈. 한국경제 기사, Claude Code로 만든 제주어 웹진 하영 고라보게 · Honjeo! Jeju, 만원의 제주, 켄싱턴 효도상점 캠페인.">
+<meta property="og:title" content="홍람빈 — 여행지보다 사람을 기억합니다">
+<meta property="og:description" content="여행 · 콘텐츠 · 글로벌을 잇는 기획자 홍람빈의 홈페이지">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23FFC000'/%3E%3Ctext x='32' y='43' font-size='30' font-weight='900' text-anchor='middle' font-family='sans-serif' fill='%23111'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* VOICE   personal homepage for a job seeker, built on the exact look of the reference page the user picked
+   IDEA    a personal-brand landing page: black hero, one yellow, the article and webzines up front as proof
+   PICTURE the user's ID photo cut out on a yellow circle; clean cover shots of the webzines and the hackathon deck
+   COLOUR  ink #111, white, soft #F5F5F5, brand yellow #FFC000 (fixed palette, reads the same in any theme)
+   TYPE    Pretendard where it loads, Noto Sans KR otherwise, 900 for headings
+   LAYOUT  hero text left + photo column right, a contents band, then full-width bands; one column under 760px */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;color-scheme:light}
+:root{--ink:#111111;--canvas:#FFFFFF;--brand:#FFC000;--soft:#F5F5F5;--mute:#707072;--hairline:#E5E5E5;--fs:'Pretendard Variable',Pretendard,'Noto Sans KR',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;--cont:1180px;--sv:96px}
+body{font-family:var(--fs);color:var(--ink);background:var(--canvas);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{word-break:keep-all;overflow-wrap:break-word}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+em{font-style:normal}
+button{font:inherit;color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.container{max-width:var(--cont);margin:0 auto;padding:0 40px;width:100%}
+section{padding:var(--sv) 0}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--ink);display:inline-block;margin-bottom:16px}
+.eyebrow::before{content:'';display:inline-block;width:20px;height:2px;background:var(--brand);vertical-align:middle;margin-right:8px}
+.sec-title{font-size:clamp(30px,4vw,46px);font-weight:900;line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+.sec-title em{color:var(--ink);background:linear-gradient(transparent 58%,var(--brand) 58%)}
+.sec-head{max-width:720px;margin:0 auto 48px;text-align:center}
+.sec-head .eyebrow::before{display:none}
+.sec-head .eyebrow{background:var(--brand);padding:5px 12px;border-radius:999px;font-weight:900}
+.group-label{display:inline-block;background:var(--ink);color:var(--brand);font-size:13px;font-weight:900;padding:7px 16px;border-radius:999px;margin-bottom:18px}
+.sec-lead{color:var(--mute);font-size:16px}
+.bar-title{border-left:4px solid var(--brand);padding-left:14px;font-weight:900;font-size:20px;line-height:1.3}
+
+/* NAV */
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:330;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+#main-nav.scrolled{background:rgba(255,255,255,.95);border-bottom-color:var(--hairline);box-shadow:0 4px 18px rgba(17,17,17,.06)}
+.nav-logo{font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.02em}
+.nav-logo span{color:var(--brand)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:#3A3A3E;font-size:14px;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--brand);text-decoration-thickness:3px;text-underline-offset:6px}
+.nav-links a.nav-cta:hover{text-decoration:none;opacity:.88}
+.nav-cta{background:var(--brand)!important;color:var(--ink)!important;padding:11px 22px;border-radius:999px;font-weight:900!important;white-space:nowrap}
+.nav-burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative;z-index:340}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px auto;transition:transform .25s,opacity .2s}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;background:#fff;z-index:310;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 40px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.drawer.open{opacity:1;visibility:visible}
+.drawer a{color:var(--ink);font-size:20px;font-weight:700;padding:14px 0;border-bottom:1px solid var(--hairline)}
+.drawer a:last-child{border-bottom:0;margin-top:14px;padding:14px 0;text-align:center;border-radius:999px;background:var(--brand);color:var(--ink)}
+
+/* HERO */
+#hero{background:radial-gradient(520px 520px at 84% 36%,rgba(255,192,0,.2),transparent 70%),radial-gradient(640px 420px at 4% 100%,rgba(90,160,240,.12),transparent 70%),linear-gradient(180deg,#FFFCF2 0%,#FFFFFF 100%);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:92px 0 28px}
+.hero-inner{max-width:var(--cont);margin:0 auto;width:100%;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--hairline);background:#fff;border-radius:999px;padding:7px 15px;color:#3A3A3E;font-size:12px;font-weight:700;letter-spacing:.04em;margin-bottom:18px}
+.hero-eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--brand);animation:blink 2.2s infinite;flex:none}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero-h1{font-size:clamp(32px,4.4vw,52px);font-weight:400;line-height:1.24;letter-spacing:-.03em;color:#2B2B2E;margin-bottom:18px;word-break:keep-all}
+.hero-h1 b{font-weight:900;color:var(--ink)}
+.hero-h1 em{color:var(--ink);background:linear-gradient(transparent 62%,var(--brand) 62%)}
+.hero-h1 .hl{white-space:normal}
+.hero-sub{font-size:16px;color:#4A4A4E;line-height:1.7;max-width:640px;margin-bottom:18px}
+.hero-sub strong{color:var(--ink);font-weight:800}
+.hero-points{display:flex;flex-direction:column;gap:7px;max-width:640px;margin:0 0 24px}
+.hero-points li{position:relative;padding-left:24px;font-size:15px;color:#3A3A3E;line-height:1.55}
+.hero-points li::before{content:'';position:absolute;left:0;top:11px;width:12px;height:2px;background:var(--brand)}
+.hero-points strong{color:var(--ink);font-weight:800}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 28px;font-size:15px;font-weight:900;white-space:nowrap;background:var(--brand);color:var(--ink);transition:opacity .2s}
+.btn-p:hover{opacity:.85}
+.hero-sns{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.hero-sns b{font-size:11px;font-weight:900;letter-spacing:.14em;color:#8A8A8E;margin-right:4px}
+.hero-sns a{font-size:13px;font-weight:700;color:var(--ink);background:#fff;border:1px solid #D9D9DC;border-radius:999px;padding:7px 14px;white-space:nowrap;transition:border-color .2s,background .2s}
+.hero-sns a:hover{border-color:var(--brand);background:#FFF8DB}
+.hero-photo{width:100%;aspect-ratio:1/1;object-fit:cover;background:none}
+/* AI TOOLKIT: 첫 화면 아래 한 줄 (밝고 간결하게) */
+.ai-band{width:100%;max-width:var(--cont);margin:30px auto 0;padding:0 40px}
+.ai-card{display:grid;grid-template-columns:190px repeat(4,minmax(0,1fr));background:#fff;border:1px solid var(--hairline);border-radius:18px;box-shadow:0 10px 30px rgba(17,17,17,.06);overflow:hidden}
+.ai-head{padding:16px 18px;background:#FFF8DB;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.ai-tag{align-self:flex-start;background:var(--ink);color:var(--brand);font-size:11px;font-weight:900;letter-spacing:.14em;padding:3px 10px;border-radius:999px}
+.ai-title{font-size:16px;font-weight:900;line-height:1.35;color:var(--ink);margin-top:4px}
+.ai-title b{font-size:26px;letter-spacing:-.02em;background:linear-gradient(transparent 60%,var(--brand) 60%)}
+.ai-note{font-size:12px;font-weight:700;color:#6A6A6E;line-height:1.45}
+.ai-col{padding:16px 18px;border-left:1px solid var(--hairline)}
+.ai-col-t{font-size:13.5px;font-weight:900;color:var(--ink);margin-bottom:6px;white-space:nowrap}
+.ai-tools{font-size:13px;line-height:1.65;color:#4A4A4E}
+.ai-tools span{white-space:nowrap}
+.ai-tools span:not(:last-child)::after{content:'·';margin-left:6px;color:#B9B9BD}
+.ai-tools .hot{font-weight:900;color:var(--ink);background:linear-gradient(transparent 58%,var(--brand) 58%)}
+
+@media (min-width:901px) and (max-height:820px){
+  #hero{padding:74px 0 14px}
+  .hero-eyebrow{font-size:11.5px;padding:5px 12px;margin-bottom:12px}
+  .hero-h1{font-size:clamp(30px,3.3vw,42px);line-height:1.18;margin-bottom:12px}
+  .hero-sub{font-size:15px;line-height:1.6;margin-bottom:12px}
+  .hero-points{gap:3px;margin-bottom:16px}
+  .hero-points li{font-size:14px;line-height:1.5}
+  .hero-points li::before{top:10px}
+  .btn-p{padding:12px 24px;font-size:14px}
+  .hero-sns{margin-top:10px}
+  .hero-sns a{padding:6px 12px}
+  .hero-inner{grid-template-columns:minmax(0,1fr) 260px}
+  .ai-band{margin-top:16px}
+  .ai-head,.ai-col{padding:12px 16px}
+  .ai-title b{font-size:22px}
+}
+
+/* CONTENTS (목차) */
+#toc{background:#fff;color:var(--ink);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:40px 0 44px}
+.toc-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+.toc-eye{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--ink);background:var(--brand);padding:3px 10px;border-radius:999px}
+.toc-note{font-size:13px;color:var(--mute)}
+.toc-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-left:1px solid var(--hairline)}
+.toc-item{display:block;padding:10px 16px 12px;text-align:center;border-right:1px solid var(--hairline);transition:background .2s}
+.toc-item:hover{background:#FFF8DB}
+.toc-num{display:block;font-size:clamp(28px,3.2vw,42px);font-weight:900;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+.toc-num::after{content:'';display:block;width:22px;height:4px;border-radius:2px;background:var(--brand);margin:6px auto 0}
+.toc-name{display:block;font-size:15px;font-weight:900;margin-top:6px}
+.toc-sub{display:block;font-size:12px;font-weight:700;color:var(--mute);margin-top:4px;line-height:1.4}
+
+/* EXPERIENCE MAP (mind map) */
+#about{background:var(--soft)}
+.mindmap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 160px minmax(0,1fr);grid-template-areas:"b1 core b2" "b3 core b4";column-gap:24px;row-gap:48px;align-items:center}
+.mm-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.mm-lines path{fill:none;stroke-linecap:round;opacity:.55}
+.mm-core{grid-area:core;position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.mm-photo{width:176px;height:176px;border-radius:50%;overflow:hidden;border:6px solid var(--brand);background:#fff;box-shadow:0 10px 30px rgba(17,17,17,.12)}
+.mm-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.12);transform-origin:50% 25%}
+.mm-core strong{font-size:22px;font-weight:900;margin-top:10px}
+.mm-core span{font-size:13px;font-weight:700;color:var(--mute)}
+.mm-sheet{margin-top:10px;display:inline-flex;align-items:center;font-size:13px;font-weight:900;color:var(--ink);background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:8px 14px;white-space:nowrap;transition:background .2s,border-color .2s}
+.mm-sheet:hover{background:var(--brand);border-color:var(--brand)}
+.b1{grid-area:b1}
+.b2{grid-area:b2}
+.b3{grid-area:b3}
+.b4{grid-area:b4}
+.branch{position:relative;display:flex;align-items:center;gap:20px;min-width:0}
+.branch.left{flex-direction:row-reverse}
+.hub{flex:none;width:114px;background:var(--c);color:#fff;border-radius:16px;padding:14px 12px;text-align:center;box-shadow:0 6px 18px rgba(17,17,17,.14)}
+.hub b{display:block;font-size:17px;font-weight:900;line-height:1.25}
+.hub small{display:block;font-size:11.5px;font-weight:700;opacity:.92;margin-top:4px;line-height:1.35}
+.leaves{display:flex;flex-direction:column;gap:8px;min-width:0;flex:1;max-width:340px;align-items:stretch}
+.branch.left .leaves{align-items:stretch}
+.leaf{display:flex;align-items:center;gap:10px;width:100%;padding:8px 10px 8px 8px;border:1.5px solid var(--hairline);border-color:color-mix(in srgb,var(--c) 30%,#fff);border-radius:16px;background:#fff;text-align:left;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .2s}
+.leaf:hover{border-color:var(--c);box-shadow:0 4px 14px rgba(17,17,17,.1);transform:translateY(-1px)}
+.leaf img,.lt{width:40px;height:40px;border-radius:50%;flex:none;object-fit:cover}
+.lt{display:grid;place-items:center;background:#f1f1f1;background:color-mix(in srgb,var(--c) 14%,#fff);color:var(--c);font-size:11px;font-weight:900;letter-spacing:-.02em}
+.leaf.tool{border-style:dashed;border-color:var(--c)}
+.leaf.tool .lt{background:var(--ink);color:var(--brand);font-size:13px}
+.lx{min-width:0;flex:1}
+.li{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;background:#F1F1F1;background:color-mix(in srgb,var(--c) 13%,#fff);color:var(--c)}
+.li svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.li-txt{font-size:13px;font-weight:900;letter-spacing:-.02em}
+.lx b{display:block;font-size:14px;font-weight:900;line-height:1.3}
+.lx small{display:block;font-size:12.5px;color:#5A5A5E;line-height:1.4;margin-top:2px}
+.aw{display:inline-block;font-style:normal;font-size:10.5px;font-weight:900;line-height:1;background:var(--brand);color:var(--ink);padding:3px 7px;border-radius:999px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.go{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font-style:normal;font-size:13px;font-weight:900;background:#F1F1F1;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c);transition:background .2s,color .2s}
+.leaf:hover .go{background:var(--c);color:#fff}
+.aw.web{background:var(--ink);color:#fff}
+.lead-aw{display:inline-block;background:var(--brand);color:var(--ink);font-size:.86em;font-weight:900;padding:0 8px;border-radius:999px}
+.nw{white-space:nowrap}
+.mm-hint{text-align:center;margin-top:28px;font-size:13px;font-weight:700;color:var(--mute)}
+
+/* SNS (dark link cards) */
+#sns{background:var(--canvas)}
+.tool-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tool-card{background:var(--ink);color:#fff;padding:30px 26px;display:flex;flex-direction:column;gap:10px;min-height:250px;border:1px solid var(--ink);transition:border-color .2s,transform .2s}
+.tool-card:hover{border-color:var(--brand);transform:translateY(-2px)}
+.tool-kicker{font-size:10px;font-weight:900;letter-spacing:.14em;color:var(--brand)}
+.tool-name{font-size:19px;font-weight:900;line-height:1.35;overflow-wrap:anywhere}
+.sns-ava{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--brand);background:#fff;margin-bottom:6px}
+.sns-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.sns-top .sns-ava{margin-bottom:0}
+.sns-stat{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.7);white-space:nowrap}
+.sns-stat b{font-size:22px;font-weight:900;color:var(--brand);letter-spacing:-.02em;margin-right:5px}
+.sns-ava.book{width:46px;height:64px;border-radius:4px;border:1px solid rgba(255,255,255,.3);background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.sns-handle{font-size:13px;font-weight:700;color:var(--brand);overflow-wrap:anywhere}
+.tool-desc{font-size:14px;color:rgba(255,255,255,.72);line-height:1.6;flex:1}
+.tool-go{font-size:13px;font-weight:900;color:var(--brand);white-space:nowrap}
+
+/* PROJECTS (card groups) */
+.proj-group+.proj-group{margin-top:56px}
+.books-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.books-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.books-grid.two .book-cover img{aspect-ratio:16/9;object-position:center}
+.cover-btn{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.cover-btn:hover img{opacity:.9}
+button.book-link{background:none;cursor:pointer}
+.book-card{border:1px solid var(--hairline);display:flex;flex-direction:column}
+.book-cover{position:relative;background:var(--soft);padding:34px 22px 18px;text-align:center}
+.book-cover img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border:1px solid var(--hairline)}
+.book-badge{position:absolute;top:0;left:0;background:var(--ink);color:#fff;font-size:10px;font-weight:900;letter-spacing:.1em;padding:5px 10px}
+.book-rank{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.rank-chip{font-size:11px;font-weight:900;background:var(--brand);color:var(--ink);padding:4px 10px;border-radius:999px}
+.rank-chip.ink{background:var(--ink);color:#fff}
+.book-info{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.book-title{font-size:16px;font-weight:900;line-height:1.4;margin-bottom:8px}
+.book-desc{font-size:13px;color:var(--mute);line-height:1.6;margin-bottom:14px;flex:1}
+.book-links{display:flex;gap:6px;flex-wrap:wrap}
+.book-link{font-size:12px;font-weight:700;border:1px solid var(--ink);border-radius:999px;padding:6px 14px;transition:background .2s,color .2s}
+.book-link:hover{background:var(--ink);color:#fff}
+
+/* CREDS */
+#creds{background:var(--soft)}
+.cred-group.wide{max-width:980px;margin:0 auto}
+.cred-list.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}
+.cred-list.two-col li:nth-last-child(2):nth-child(odd){border-bottom:0}
+.cred-group{background:var(--canvas);padding:36px 32px;border:1px solid var(--hairline)}
+.cred-group h3{margin-bottom:22px}
+.cred-list li{font-size:14px;line-height:1.6;padding:12px 0 12px 18px;border-bottom:1px solid var(--hairline);position:relative}
+.cred-list li:last-child{border-bottom:0}
+.cred-list li::before{content:'';position:absolute;left:0;top:19px;width:7px;height:7px;background:var(--brand)}
+.cred-list strong{font-weight:inherit;background:none}
+
+/* FOOTER (연락처) */
+footer{background:var(--ink);color:#fff;padding:56px 40px 44px;border-top:6px solid var(--brand);text-align:center}
+.ft-logo{font-size:18px;font-weight:900;margin-bottom:20px}
+.ft-logo span{color:var(--brand)}
+.ft-contact{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.ft-chip{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:12px 22px;font-size:16px;font-weight:900;color:#fff;transition:border-color .2s,color .2s}
+.ft-chip:hover{border-color:var(--brand);color:var(--brand)}
+.ft-chip em{font-style:normal;font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--brand)}
+.ft-links{display:flex;gap:10px 22px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.ft-links a{font-size:13px;font-weight:700;color:rgba(255,255,255,.65)}
+.ft-links a:hover{color:var(--brand)}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.45)}
+
+/* SLIDE VIEWER */
+.viewer{position:fixed;inset:0;z-index:400;background:rgba(17,17,17,.97);color:#fff;display:flex;flex-direction:column}
+.viewer[hidden]{display:none}
+.v-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px}
+.v-title{font-size:15px;font-weight:900}
+.v-title span{display:block;font-size:12px;font-weight:700;color:rgba(255,255,255,.6)}
+.v-close{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.v-close:hover{border-color:var(--brand);color:var(--brand)}
+.v-track{flex:1;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none}
+.v-track::-webkit-scrollbar{display:none}
+.v-slide{flex:0 0 100%;min-width:0;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4px 20px}
+.v-slide img{width:auto;max-width:min(100%,1180px);max-height:calc(100vh - 190px);object-fit:contain;background:#fff}
+.v-slide figcaption{font-size:13px;font-weight:700;color:rgba(255,255,255,.72);margin-top:12px;text-align:center}
+.v-foot{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px 20px 20px}
+.v-count{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums;min-width:64px;text-align:center}
+.v-btn{height:44px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;font-size:14px;font-weight:900;cursor:pointer;white-space:nowrap}
+.v-btn:hover{border-color:var(--brand);color:var(--brand)}
+
+/* EXPERIENCE PANEL (경험 정리표: 기록 → 기록가치 → 역량 → 역량가치(활용)) */
+.exp{position:fixed;inset:0;z-index:420;background:rgba(17,17,17,.6);display:flex;align-items:center;justify-content:center;padding:24px}
+.exp[hidden]{display:none}
+.exp-card{position:relative;background:#fff;color:var(--ink);width:min(1060px,100%);max-height:calc(100vh - 48px);overflow:auto;overscroll-behavior:contain;border-top:8px solid var(--c,#111);padding:30px 30px 26px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.exp-close{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:1px solid var(--hairline);background:#fff;font-size:22px;line-height:1;cursor:pointer}
+.exp-close:hover{border-color:var(--c)}
+.exp-top{display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;align-items:center;margin-bottom:22px;padding-right:40px}
+.exp-top.noimg{grid-template-columns:minmax(0,1fr)}
+.exp-top img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--hairline);border-radius:8px;background:var(--soft)}
+.exp-top img.wide{aspect-ratio:16/9}
+.exp-top img.contain{object-fit:contain;padding:8px;background:#F6F6F6;background:color-mix(in srgb,var(--c) 7%,#fff)}
+.exp-img{position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.exp-img::after{content:'크게 보기';position:absolute;right:8px;top:8px;background:rgba(17,17,17,.72);color:#fff;font-size:11px;font-weight:900;padding:3px 9px;border-radius:999px}
+.zoom{position:fixed;inset:0;z-index:450;background:rgba(17,17,17,.9);display:flex;align-items:center;justify-content:center;padding:60px 16px 16px;cursor:zoom-out}
+.zoom[hidden]{display:none}
+.zoom img{max-width:min(100%,1200px);max-height:100%;object-fit:contain;background:#fff;border-radius:6px}
+.zoom-close{position:absolute;top:10px;right:12px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:none;color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.exp-cat{display:inline-block;background:var(--c);color:#fff;font-size:12px;font-weight:900;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+.exp-title{font-size:26px;font-weight:900;line-height:1.25;letter-spacing:-.02em}
+.exp-meta{font-size:13px;color:var(--mute);margin-top:6px}
+.exp-one{margin-top:12px;background:#F6F6F6;background:color-mix(in srgb,var(--c) 9%,#fff);border-left:4px solid var(--c);color:var(--ink);border-radius:4px 10px 10px 4px;padding:12px 16px;font-size:15px;font-weight:700;line-height:1.6}
+.exp-one b{color:var(--c);font-weight:900}
+.exp-flow{display:grid;grid-template-columns:minmax(0,1fr) 14px minmax(0,1.05fr) 14px minmax(0,1fr) 14px minmax(0,1fr);gap:8px;align-items:stretch}
+.ef-col{border:1px solid var(--hairline);border-radius:10px;overflow:hidden;background:#FCFCFC;min-width:0}
+.ef-col h4{margin:0;padding:9px 12px;background:#ECECEC;font-size:14px;font-weight:900;text-align:center}
+.ef-col.val h4{background:#FFF3C4}
+.ef-col.use h4{background:var(--c);color:#fff}
+.ef-col ul{display:flex;flex-direction:column;gap:8px;padding:12px 12px 14px;font-size:13.5px;line-height:1.55}
+.ef-col li{position:relative;padding-left:12px}
+.ef-col li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#A0A0A0}
+.ef-col.use li{color:var(--c);font-weight:700}
+.ef-col.use li::before{background:var(--c)}
+.ef-col .ef-val li{padding-left:0}
+.ef-col .ef-val li::before{display:none}
+.ef-val b{display:block;font-size:19px;font-weight:900;color:var(--c);line-height:1.25}
+.ef-val span{display:block;font-size:12.5px;color:var(--mute);line-height:1.45}
+.ef-val i{display:inline-block;margin-top:4px;font-style:normal;font-size:10.5px;font-weight:900;color:var(--c);border:1px solid currentColor;border-radius:999px;padding:0 7px}
+.ef-arrow{align-self:center;justify-self:center;width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:12px solid var(--brand)}
+.exp-note{margin-top:16px;font-size:12.5px;color:var(--mute)}
+.exp-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.exp-links a,.exp-links button{font-size:13px;font-weight:900;border-radius:999px;padding:11px 18px;border:1px solid var(--ink);background:#fff;cursor:pointer;white-space:nowrap}
+.exp-links .primary{background:var(--ink);color:#fff}
+.exp-links a:hover,.exp-links button:hover{opacity:.85}
+@media(max-width:900px){
+  .exp-flow{grid-template-columns:minmax(0,1fr);gap:6px}
+  .ef-arrow{border-top:11px solid var(--brand);border-bottom:0;border-left:9px solid transparent;border-right:9px solid transparent}
+}
+
+/* RESPONSIVE */
+@media(max-width:1099px){
+  .mindmap{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"core core" "b1 b2" "b3 b4";row-gap:36px;column-gap:28px;align-items:start}
+  .mm-lines{display:none}
+  .branch,.branch.left{flex-direction:column;align-items:stretch;gap:12px}
+  .hub{width:auto;text-align:left;padding:12px 16px}
+  .hub b{display:inline;font-size:17px}
+  .hub small{display:inline;margin:0 0 0 8px}
+  .leaves,.branch.left .leaves{max-width:none;align-items:stretch;border-left:3px solid var(--c);padding-left:14px;margin-left:14px}
+  .leaf{width:100%}
+}
+@media(max-width:1024px){
+  :root{--sv:64px}
+  .hero-inner{grid-template-columns:minmax(0,1fr) 260px;gap:40px}
+  .toc-item{padding:14px 10px}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tool-grid,.books-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:860px){
+  #main-nav{padding:14px 20px}
+  .nav-links{display:none}
+  .nav-burger{display:block}
+}
+@media(max-width:900px){
+  .ai-card{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ai-head{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap;gap:6px 12px}
+  .ai-title{margin-top:0}
+  .ai-col{border-left:0;border-top:1px solid var(--hairline)}
+  .ai-col.c2,.ai-col.c4{border-left:1px solid var(--hairline)}
+}
+@media(max-width:760px){
+  :root{--sv:48px}
+  .container,.hero-inner{padding:0 20px}
+  #hero{padding:96px 0 44px}
+  .hero-inner{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hero-photo-wrap{max-width:none}
+  .hero-photo{display:block;max-width:260px;margin:0 auto}
+  .toc-head{flex-direction:column;gap:2px}
+  .toc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .toc-item{border-bottom:1px solid var(--hairline)}
+  .toc-grid .toc-item:last-child{grid-column:1/-1;border-bottom:0}
+  .cat-grid{grid-template-columns:minmax(0,1fr)}
+  .tool-grid,.books-grid,.books-grid.two{grid-template-columns:minmax(0,1fr)}
+  .mindmap{grid-template-columns:minmax(0,1fr);grid-template-areas:"core" "b1" "b2" "b3" "b4"}
+  .mm-photo{width:140px;height:140px}
+  .hub small{display:block;margin:2px 0 0}
+  .cred-list.two-col{grid-template-columns:minmax(0,1fr)}
+  .cred-list.two-col li:nth-last-child(2):nth-child(odd){border-bottom:1px solid var(--hairline)}
+  .exp{padding:0;align-items:stretch}
+  .exp-card{max-height:none;height:100%;width:100%;padding:24px 20px}
+  .exp-top{grid-template-columns:minmax(0,1fr);padding-right:40px}
+  .exp-img::after{top:auto;bottom:8px}
+  .exp-title{font-size:22px}
+  .tool-card{min-height:0}
+  .btn-p{width:100%}
+  footer{padding:44px 20px 36px}
+  .ft-chip{font-size:15px;padding:11px 18px}
+  .v-slide{padding:4px 10px}
+  /* 모바일 가독성: 글자 키우고 회색 진하게 */
+  :root{--mute:#57575A}
+  .hero-sub{color:#444448}
+  .hero-h1{font-size:clamp(26px,7.4vw,42px)}
+  .hero-points li{font-size:15px;color:#333336}
+  .hero-sns a{font-size:14px;padding:9px 15px}
+  .ai-band{padding:0 20px;margin-top:32px}
+  .ai-card{grid-template-columns:minmax(0,1fr)}
+  .ai-col.c2,.ai-col.c4{border-left:0}
+  .ai-col{padding:14px 18px}
+  .ai-col-t{font-size:15px}
+  .ai-tools{font-size:14.5px;line-height:1.7}
+  .ai-title{font-size:17px}
+  .ai-note{font-size:13px}
+  .toc-name{font-size:16px}
+  .toc-sub{font-size:13px}
+  .trust-note{font-size:15px;line-height:1.65}
+  .cat-head{font-size:15.5px;padding:14px 18px}
+  .cat-item{padding:16px 18px}
+  .cat-item strong{font-size:16px;line-height:1.45}
+  .cat-item small{font-size:14px;line-height:1.6}
+  .cat-go{font-size:13.5px}
+  .ci-thumb{width:50px;height:68px}
+  .sec-lead{line-height:1.7}
+  .mm-core span{font-size:14px}
+  .hub b{font-size:18px}
+  .hub small{font-size:13px}
+  .leaf{padding:9px 12px 9px 9px;gap:12px}
+  .aw{font-size:11px}
+  .leaf img,.lt{width:46px;height:46px}
+  .li{width:44px;height:44px}
+  .li svg{width:22px;height:22px}
+  .lx b{font-size:15.5px;line-height:1.35}
+  .lx small{font-size:13.5px;line-height:1.45;margin-top:2px}
+  .tool-card{padding:26px 22px;gap:12px}
+  .tool-kicker{font-size:12px}
+  .tool-name{font-size:20px}
+  .sns-handle{font-size:14.5px}
+  .tool-desc{font-size:15.5px;line-height:1.7;color:rgba(255,255,255,.84)}
+  .tool-go{font-size:14.5px}
+  .book-badge{font-size:11px}
+  .book-title{font-size:18px}
+  .book-desc{font-size:15px;line-height:1.7}
+  .book-link{font-size:14px;padding:9px 16px}
+  .cred-group{padding:28px 20px}
+  .cred-list li{font-size:15.5px}
+  .ft-links a{font-size:14.5px;color:rgba(255,255,255,.82)}
+  .ft-copy{font-size:13px;color:rgba(255,255,255,.62)}
+  .ft-chip em{font-size:12px}
+  .exp-card{padding:22px 18px 28px}
+  .exp-cat{font-size:13px}
+  .exp-title{font-size:23px}
+  .exp-meta{font-size:14px;line-height:1.55}
+  .exp-one{font-size:16.5px;line-height:1.65}
+  .ef-col h4{font-size:16px;padding:11px 14px}
+  .ef-col ul{font-size:15.5px;line-height:1.7;gap:10px;padding:14px 16px 16px}
+  .ef-col li::before{top:11px}
+  .ef-val b{font-size:23px}
+  .ef-val span{font-size:14.5px;line-height:1.55}
+  .ef-val i{font-size:12px;padding:1px 9px}
+  .exp-note{font-size:14.5px;line-height:1.6}
+  .exp-links{flex-direction:column}
+  .exp-links a,.exp-links button{width:100%;text-align:center;font-size:15px;padding:14px 18px;white-space:normal}
+  .v-slide figcaption{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav" aria-label="주요 메뉴">
+  <a class="nav-logo" href="#hero">홍람빈 <span>·</span> Rambin Hong</a>
+  <div class="nav-links">
+    <a href="#about">경험</a>
+    <a href="#sns">SNS</a>
+    <a href="#projects">프로젝트</a>
+    <a href="#contact" class="nav-cta">연락하기 →</a>
+  </div>
+  <button class="nav-burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+</nav>
+<div class="drawer" id="drawer">
+  <a href="#about">경험 마인드맵</a>
+  <a href="#sns">SNS</a>
+  <a href="#projects">대표 프로젝트</a>
+  <a href="#creds">자격·교육</a>
+  <a href="#contact">연락하기 →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">관광경영 전공 · 18개국 48개 도시를 경험한 기획자</div>
+      <h1 class="hero-h1"><b>AI</b>로 효율을 높이고,<br><b>데이터</b>로 기회를 찾아<br><b>기획</b>하는 홍람빈입니다.</h1>
+      <p class="hero-sub">
+        2026년 제주를 주제로 웹진 3개를 만들고 최우수상을 두 번 받았습니다.
+      </p>
+      <ul class="hero-points">
+        <li>인터뷰이 7명을 직접 섭외해 <strong>사라져 가는 제주어</strong>를 웹진과 기사로 남겼습니다</li>
+        <li>Claude Code로 외국인용 영문 웹진 <strong>'Honjeo! Jeju'</strong>를 직접 만들었습니다</li>
+        <li>팔로워 491명 계정에서 <strong>릴스 368만 회</strong>, 개인 채널 누적 770만+ 조회를 만들었습니다</li>
+      </ul>
+      <div class="hero-btns">
+        <a class="btn-p" href="#projects">대표 프로젝트 보기 →</a>
+      </div>
+      <div class="hero-sns" aria-label="SNS 바로가기">
+        <b>SNS</b>
+        <a href="https://www.instagram.com/korean_with_ram/" target="_blank" rel="noopener">@korean_with_ram</a>
+        <a href="https://www.instagram.com/da._.raming/" target="_blank" rel="noopener">@da._.raming</a>
+        <a href="https://blog.naver.com/touram0701" target="_blank" rel="noopener">네이버 블로그</a>
+        <a href="https://brunch.co.kr/@5696c18d0c5f41d" target="_blank" rel="noopener">브런치</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="img/profile-hero.webp" alt="홍람빈 프로필 사진" width="640" height="640" decoding="async" fetchpriority="high">
+    </div>
+  </div>
+  <div class="ai-band">
+    <div class="ai-card" role="group" aria-label="직접 써 본 AI 도구 22개">
+      <div class="ai-head"><span class="ai-tag">AI TOOLKIT</span><p class="ai-title">직접 써 본 AI 도구 <b>22</b>개</p><p class="ai-note">기획부터 Vercel 배포까지, 코딩 없이 직접</p></div>
+      <div class="ai-col c1"><p class="ai-col-t">🔎 리서치 · 기획</p><p class="ai-tools"><span class="hot">Claude</span> <span>ChatGPT</span> <span>Gemini</span> <span>NotebookLM</span></p></div>
+      <div class="ai-col c2"><p class="ai-col-t">🎨 디자인 · 영상 · 음성</p><p class="ai-tools"><span>Canva</span> <span>Figma</span> <span>Google Flow</span> <span>Google Vids</span> <span>Suno</span> <span>Typecast</span> <span>클로바더빙</span></p></div>
+      <div class="ai-col c3"><p class="ai-col-t">⚙️ 바이브코딩 · 자동화</p><p class="ai-tools"><span class="hot">Claude Code</span> <span>Chrome MCP</span> <span>Remotion</span> <span>Apps Script</span> <span>GitHub</span> <span>Vercel</span> <span>Slack 봇</span></p></div>
+      <div class="ai-col c4"><p class="ai-col-t">📊 데이터 · 광고</p><p class="ai-tools"><span>GA4</span> <span>GTM</span> <span>UTM</span> <span>Meta 광고</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section id="toc" aria-labelledby="toc-title">
+  <div class="container">
+    <div class="toc-head"><span class="toc-eye" id="toc-title">CONTENTS · 목차</span><span class="toc-note">누르면 해당 내용으로 넘어갑니다</span></div>
+    <nav class="toc-grid" aria-label="목차">
+      <a class="toc-item" href="#about"><span class="toc-num">01</span><span class="toc-name">경험 마인드맵</span></a>
+      <a class="toc-item" href="#sns"><span class="toc-num">02</span><span class="toc-name">SNS</span></a>
+      <a class="toc-item" href="#projects"><span class="toc-num">03</span><span class="toc-name">대표 프로젝트</span></a>
+      <a class="toc-item" href="#creds"><span class="toc-num">04</span><span class="toc-name">자격 · 교육</span></a>
+      <a class="toc-item" href="#contact"><span class="toc-num">05</span><span class="toc-name">연락처</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- EXPERIENCE MAP -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">EXPERIENCE MAP</div>
+      <h2 class="sec-title">고객의 첫 여행을 끝까지 책임지는,<br><em>현장형 인재</em></h2>
+      <p class="sec-lead">경험 16개를 역량 4가지로 묶었습니다.</p>
+    </div>
+    <div class="mindmap" id="mm">
+      <svg class="mm-lines" aria-hidden="true"></svg>
+      <div class="mm-core">
+        <div class="mm-photo"><img src="img/profile-plain.jpg" alt="홍람빈" width="900" height="900" loading="lazy" decoding="async"></div>
+        <strong>홍람빈</strong>
+        <span>관광경영 · 18개국 48개 도시</span>
+        <a class="mm-sheet" href="https://claude.ai/artifact/6wqsdkMASBdrx1UogYdZ7x" target="_blank" rel="noopener">경험 정리표 전체 보기 ↗</a>
+      </div>
+      <div class="branch left b1" style="--c:#C2412A">
+        <div class="hub"><b>기획·실행력</b><small>최우수상 2회 · 대상</small></div>
+        <div class="leaves">
+          <button class="leaf tool" type="button" data-exp="ai"><span class="li li-txt" aria-hidden="true">AI</span><span class="lx"><b>도구 · AI</b><small>AI 도구 22개 · 리서치부터 웹 배포까지</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="kensington"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><span class="lx"><b>켄싱턴 효도상점<em class="aw">최우수상</em></b><small>3박 효도여행 SNS 캠페인 · 팀장·PM</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="hayoung"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span class="lx"><b>하영 고라보게<em class="aw">최우수상</em><em class="aw web">웹진 제작</em></b><small>제주어 엽서 웹진 · 영문판 단독 기획</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="lottejtb"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span><span class="lx"><b>롯데JTB 복리후생<em class="aw">대상</em></b><small>MZ 107명 설문 → 복지 14개 · 1팀 팀장</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="kac"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span><span class="lx"><b>한국공항공사 인스타툰<em class="aw">우수상</em></b><small>지방공항 8곳 동화 패러디 · 홍보실 실무</small></span><i class="go" aria-hidden="true">→</i></button>
+        </div>
+      </div>
+      <div class="branch b2" style="--c:#13805C">
+        <div class="hub"><b>고객 이해력</b><small>직접 묻고, 데이터로 확인</small></div>
+        <div class="leaves">
+          <button class="leaf" type="button" data-exp="manwon"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="lx"><b>만원의 제주<em class="aw web">웹진 제작</em></b><small>만 원 한 끼 지도 227곳 · 3인 팀</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="icoos"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="7" width="12" height="13" rx="2"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><line x1="10" y1="11" x2="10" y2="16"/><line x1="14" y1="11" x2="14" y2="16"/><line x1="8" y1="20" x2="8" y2="22"/><line x1="16" y1="20" x2="16" y2="22"/></svg></span><span class="lx"><b>아이쿠스 마케팅 크루</b><small>7개 기수 280명 모집 · 6개국 가이드북</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="pretty"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span><span class="lx"><b>프리티 캐나다 앰버서더<em class="aw">우수 선정</em></b><small>유학생 생활 정보 카드뉴스 6편</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="wishes"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="lx"><b>위시즈</b><small>공감형 릴스로 1주 만에 팔로워 +400</small></span><i class="go" aria-hidden="true">→</i></button>
+        </div>
+      </div>
+      <div class="branch left b3" style="--c:#8A3FD6">
+        <div class="hub"><b>전달력</b><small>어려운 정보를 쉽게</small></div>
+        <div class="leaves">
+          <button class="leaf" type="button" data-exp="article"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="11" y2="12"/><line x1="7" y1="16" x2="11" y2="16"/><rect x="14" y="11.5" width="3" height="4.5"/></svg></span><span class="lx"><b>한국경제신문 기사</b><small>제주어 독립서점 인터뷰 · 인턴 기자</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="naver"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span><span class="lx"><b>NAVER 여행플러스<em class="aw">우수 선정</em></b><small>공식 발행 주기 격주 → 주 1회</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="brunch"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="lx"><b>여행 에세이 · 브런치 연재</b><small>사람 이야기 에세이 8편 · 출간 기획</small></span><i class="go" aria-hidden="true">→</i></button>
+        </div>
+      </div>
+      <div class="branch b4" style="--c:#1F6CB0">
+        <div class="hub"><b>글로벌 커뮤니케이션</b><small>영어로 일하고, 한국어를 가르칩니다</small></div>
+        <div class="leaves">
+          <button class="leaf" type="button" data-exp="honjeo"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span class="lx"><b>Honjeo! Jeju<em class="aw web">웹진 제작</em></b><small>외국인용 영문 웹진 · Claude Code 제작</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="vic"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><line x1="22" y1="10" x2="22" y2="16"/></svg></span><span class="lx"><b>VIC 밴쿠버</b><small>영어 투어 진행 · CS 디플로마</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="ciee"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="lx"><b>CIEE 서울메이트</b><small>교환학생 버디 · 국·영문 SNS · 2회</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="seoulx"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span><span class="lx"><b>Seoul X 서울버킷메이트</b><small>외국인 시선 숏폼 9편 · 6만+ 조회</small></span><i class="go" aria-hidden="true">→</i></button>
+          <button class="leaf" type="button" data-exp="teacher"><span class="li" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="13" rx="1.5"/><line x1="12" y1="16" x2="12" y2="18.5"/><line x1="8" y1="21.5" x2="12" y2="18.5"/><line x1="16" y1="21.5" x2="12" y2="18.5"/><line x1="6" y1="8" x2="14" y2="8"/><line x1="6" y1="11.5" x2="11" y2="11.5"/></svg></span><span class="lx"><b>한국어 강사 · <span class="nw">고등부 국어 입시강사</span></b><small>AI로 만든 수업 웹페이지 · 수강생 100명</small></span><i class="go" aria-hidden="true">→</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNS -->
+<section id="sns">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">SNS</div>
+      <h2 class="sec-title">직접 운영하는 <em>SNS 채널</em></h2>
+      <p class="sec-lead">여행 정보와 사람 이야기를 꾸준히 올립니다. 카드를 누르면 바로 열립니다.</p>
+    </div>
+    <div class="tool-grid">
+      <a class="tool-card" href="https://www.instagram.com/korean_with_ram/" target="_blank" rel="noopener">
+        <div class="sns-top"><img class="sns-ava" src="img/ava-korean.jpg" alt="@korean_with_ram 프로필 사진" width="64" height="64" loading="lazy"><span class="sns-stat"><b>523만+</b>누적 조회</span></div>
+        <div class="tool-kicker">INSTAGRAM · 한국 소개</div>
+        <div class="tool-name">@korean_with_ram</div>
+        <div class="sns-handle">Ram 람 | Korean</div>
+        <p class="tool-desc">진짜 한국사람을 보여드립니다. Let me show you real Korean.</p>
+        <div class="tool-go">릴스 보러 가기 →</div>
+      </a>
+      <a class="tool-card" href="https://www.instagram.com/da._.raming/" target="_blank" rel="noopener">
+        <div class="sns-top"><img class="sns-ava" src="img/ava-raming.jpg" alt="@da._.raming 프로필 사진" width="64" height="64" loading="lazy"><span class="sns-stat"><b>236만+</b>누적 조회</span></div>
+        <div class="tool-kicker">INSTAGRAM · 여행</div>
+        <div class="tool-name">@da._.raming</div>
+        <div class="sns-handle">다라밍 | 여행 가이드</div>
+        <p class="tool-desc">관광경영학생이 알려주는, 고생해서 얻은 꿀팁. 18개국 48개 도시 여행 정보를 나눕니다.</p>
+        <div class="tool-go">릴스 보러 가기 →</div>
+      </a>
+      <a class="tool-card" href="https://blog.naver.com/touram0701" target="_blank" rel="noopener">
+        <div class="sns-top"><img class="sns-ava" src="img/ava-blog.jpg" alt="네이버 블로그 다라밍 프로필 그림" width="64" height="64" loading="lazy"><span class="sns-stat"><b>14.4만</b>누적 방문</span></div>
+        <div class="tool-kicker">NAVER BLOG · 네이버 블로그</div>
+        <div class="tool-name">다람공쥐의 쥐리는 여행 기록</div>
+        <div class="sns-handle">다라밍 · blog.naver.com/touram0701</div>
+        <p class="tool-desc">환전·교통·공항처럼 바로 쓰는 여행 정보</p>
+        <div class="tool-go">블로그 가기 →</div>
+      </a>
+      <a class="tool-card" href="https://brunch.co.kr/@5696c18d0c5f41d" target="_blank" rel="noopener">
+        <div class="sns-top"><img class="sns-ava book" src="img/book-mini.jpg" alt="여행 에세이 『Hello, 나의 여행은 사람으로 채워진다』 표지" width="46" height="64" loading="lazy"></div>
+        <div class="tool-kicker">BRUNCH · 브런치</div>
+        <div class="tool-name">람이의 브런치</div>
+        <div class="sns-handle">「나는 여행지보다 사람을 기억한다」 연재</div>
+        <p class="tool-desc">여행 에세이 『Hello, 나의 여행은 사람으로 채워진다』의 이야기를 먼저 씁니다. 밴쿠버·미국에서 먼저 건넨 'Hello'로 만난 사람들, 8편 연재.</p>
+        <div class="tool-go">글 읽으러 가기 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">PROJECTS</div>
+      <h2 class="sec-title">대표 프로젝트<br><em>최우수상 2회</em></h2>
+    </div>
+    <div class="proj-group">
+      <div class="group-label">기사 · 캠페인</div>
+      <div class="books-grid two">
+        <div class="book-card">
+          <div class="book-cover"><div class="book-badge">PRESS</div><img src="img/article-cover.jpg" alt="기사 속 사진: 제주어 그림책 '서지여사와 복만씨'" width="800" height="600" loading="lazy" decoding="async"><div class="book-rank"><div class="rank-chip">한국경제</div><div class="rank-chip ink">2026.10.19</div></div></div>
+          <div class="book-info">
+            <div class="book-title">할머니가 말하고 어머니가 받아 적고 손녀가 건넨 책</div>
+            <p class="book-desc">제주어를 이어 가는 모슬포 독립서점 '어나더 페이지' 인터뷰 기사입니다. 인터뷰이를 직접 섭외하고 현장 인터뷰를 진행해 기사로 썼습니다. (인턴 기자 5인 공동 바이라인)</p>
+            <div class="book-links"><a class="book-link" href="https://www.hankyung.com/article/202610191003O" target="_blank" rel="noopener">기사 보기</a><button class="book-link" type="button" data-exp="article">자세히 보기</button></div>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="book-cover"><div class="book-badge">AWARD</div><button class="cover-btn" type="button" data-slide="0" aria-label="효도상점 발표 자료 크게 보기"><img src="slides/slide01.jpg" alt="효도상점 발표 자료 표지: 효도는 반만, 나머지는 켄싱턴이" width="1280" height="720" loading="lazy" decoding="async"></button><div class="book-rank"><div class="rank-chip">최우수상</div><div class="rank-chip ink">팀장·PM</div></div></div>
+          <div class="book-info">
+            <div class="book-title">켄싱턴 효도상점 · 3박 효도여행 SNS 캠페인</div>
+            <p class="book-desc">'효도는 반만, 나머지는 켄싱턴이.' 효도여행을 메뉴판 → 주문서 → 영수증으로 잇는 캠페인입니다. Claude와 리서치·기획안 12개를 펼쳐 하나로 모았고, 한림·중문·서귀포 3박 로드맵을 설계했습니다. (K-Tour LX 1박 2일 해커톤 · 3인 팀)</p>
+            <div class="book-links"><button class="book-link" type="button" data-slide="0">발표 자료 보기</button><button class="book-link" type="button" data-exp="kensington">자세히 보기</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-group">
+      <div class="group-label">직접 만든 웹진 3</div>
+      <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover"><div class="book-badge">AWARD</div><img src="img/hayoung-cover.jpg" alt="하영 고라보게 첫 화면: 엽서 봉투" width="800" height="600" loading="lazy" decoding="async"><div class="book-rank"><div class="rank-chip">최우수상</div><div class="rank-chip ink">Claude Code</div></div></div>
+        <div class="book-info">
+          <div class="book-title">하영 고라보게 · 제주어 엽서 웹진</div>
+          <p class="book-desc">평소 말투로 쓰면 제주어로 바꿔 주는 엽서 웹진. 영문 웹진 'Honjeo! Jeju'를 단독 기획·제작하고, 인터뷰이 7명 섭외·인터뷰 진행과 발표를 맡았습니다. 6팀 중 최우수상, 사용자 2,965명(목표의 3배).</p>
+          <div class="book-links"><a class="book-link" href="https://lxwebzine.hankyung.com/2026-1/team1/" target="_blank" rel="noopener">웹진 보기</a><a class="book-link" href="https://www.hankyung.com/article/202610191003O" target="_blank" rel="noopener">기사 보기</a><button class="book-link" type="button" data-exp="hayoung">자세히 보기</button></div>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover"><div class="book-badge">SOLO</div><img src="img/honjeo-cover.jpg" alt="Honjeo! Jeju 첫 화면: Welcome to Jeju" width="800" height="600" loading="lazy" decoding="async"><div class="book-rank"><div class="rank-chip">직접 제작</div><div class="rank-chip ink">Claude Code</div></div></div>
+        <div class="book-info">
+          <div class="book-title">Honjeo! Jeju · 외국인용 영문 웹진</div>
+          <p class="book-desc">K-드라마 촬영지·K-팝·K-뷰티 코스에 제주어를 얹은 외국인용 영문 웹진. Claude Code로 직접 만들었고, 글로벌 사용자 286명(목표 100명의 2.9배)이 찾았습니다.</p>
+          <div class="book-links"><a class="book-link" href="https://lxwebzine.hankyung.com/2026-1/team1/en/" target="_blank" rel="noopener">웹진 보기</a><button class="book-link" type="button" data-exp="honjeo">자세히 보기</button></div>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover"><div class="book-badge">DATA</div><img src="img/manwon-cover.jpg" alt="만원의 제주 첫 화면: 만 원 지폐 위의 한 끼" width="800" height="600" loading="lazy" decoding="async"><div class="book-rank"><div class="rank-chip">227곳 선별</div><div class="rank-chip">방문율 +28%</div></div></div>
+        <div class="book-info">
+          <div class="book-title">만원의 제주 · 가성비 맛집 지도</div>
+          <p class="book-desc">외식물가 리포트 6편을 분석해 보니, '제주는 비싸다'는 통념과 달리 한 끼 가격은 1년간 2.2% 오르는 데 그쳤습니다. 광고성 후기가 적은 카카오맵 후기로 만 원 이하 가성비 업체 227곳을 골라 지도로 만들고, 릴스 홍보로 방문율을 28% 높였습니다. (제주 관광 데이터 활용 공모전 · 3인 팀)</p>
+          <div class="book-links"><a class="book-link" href="https://jaehyunsong77.github.io/manwon-jeju/" target="_blank" rel="noopener">웹진 보기</a><button class="book-link" type="button" data-exp="manwon">자세히 보기</button></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDS -->
+<section id="creds">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">CREDENTIALS</div>
+      <h2 class="sec-title">자격과 <em>교육</em></h2>
+    </div>
+    <div class="cred-group wide">
+      <ul class="cred-list two-col">
+        <li>신한대학교 글로벌관광경영학과</li>
+        <li><strong>Customer Service Professional Diploma</strong> — VIC, 밴쿠버 (2025.10)</li>
+        <li><strong>국외여행인솔자 자격증</strong> (2026.07)</li>
+        <li><strong>ADsP</strong> 데이터분석 준전문가 (2026.03)</li>
+        <li>한경닷컴×이랜드 K-Tour LX 콘텐츠 마케팅 과정 1기 (2026.08~2026.11)</li>
+        <li>한국어교원 2급 취득 과정 수강 중</li>
+        <li>한국사능력검정시험 1급 (2022.12)</li>
+        <li>CS서비스커뮤니케이션 1급 (2023.10)</li>
+        <li>브랜드마케터 · 홍보전략전문가 · 콘텐츠기획관리사 1급 (2023.11)</li>
+        <li>직업상담사 2급 (2022.11)</li>
+        <li>한국관광공사 여행업계 대학생 DX 체험단 수료 (2023.12)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="ft-logo">홍람빈 <span>·</span> Rambin Hong</div>
+  <div class="ft-contact">
+    <a class="ft-chip" href="mailto:touram0701@naver.com"><em>E-MAIL</em>touram0701@naver.com</a>
+    <a class="ft-chip" href="tel:01080403609"><em>PHONE</em>010-8040-3609</a>
+  </div>
+  <div class="ft-links">
+    <a href="https://www.instagram.com/korean_with_ram/" target="_blank" rel="noopener">@korean_with_ram</a>
+    <a href="https://www.instagram.com/da._.raming/" target="_blank" rel="noopener">@da._.raming</a>
+    <a href="https://blog.naver.com/touram0701" target="_blank" rel="noopener">네이버 블로그</a>
+    <a href="https://brunch.co.kr/@5696c18d0c5f41d" target="_blank" rel="noopener">브런치</a>
+  </div>
+  <div class="ft-copy">© 2026 홍람빈 · Rambin Hong</div>
+</footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="v-title" hidden>
+  <div class="v-head">
+    <div class="v-title" id="v-title">켄싱턴 효도상점 발표 자료<span>K-Tour LX 아이디어톤 최우수상 · 3인 팀 '불효자들'</span></div>
+    <button class="v-close" id="v-close" type="button" aria-label="발표 자료 닫기">×</button>
+  </div>
+  <div class="v-track" id="v-track" tabindex="-1"></div>
+  <div class="v-foot">
+    <button class="v-btn" id="v-prev" type="button">← 이전</button>
+    <span class="v-count" id="v-count" aria-live="polite">1 / 16</span>
+    <button class="v-btn" id="v-next" type="button">다음 →</button>
+  </div>
+</div>
+
+<div class="exp" id="exp" role="dialog" aria-modal="true" aria-labelledby="exp-title" hidden>
+  <div class="exp-card" id="exp-card">
+    <button class="exp-close" id="exp-close" type="button" aria-label="닫기">×</button>
+    <div id="exp-body"></div>
+  </div>
+</div>
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="사진 크게 보기" hidden>
+  <button class="zoom-close" id="zoom-close" type="button" aria-label="닫기">×</button>
+  <img id="zoom-img" alt="">
+</div>
+
+<script>
+{
+  // 1) 네비게이션 스크롤 상태
+  const nav = document.getElementById('main-nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // 2) 모바일 햄버거 드로어
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  const setDrawer = (open) => {
+    drawer.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  burger.addEventListener('click', () => setDrawer(!drawer.classList.contains('open')));
+  drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setDrawer(false)));
+
+  // 3) 효도상점 발표 자료 뷰어
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const SLIDES = ['표지 · 효도는 반만, 나머지는 켄싱턴이', '팀 소개', '기획의도 · 상품은 있었다, 이야기가 없었을 뿐', '왜 영수증인가', '메뉴판 → 주문서 → 영수증', '타깃 고객 · 33세 직장인', '우리가 세운 가설', '핵심 콘셉트 · 가족 사이 시차', '마케팅 전략 · 인지 → 참여 → 전환', 'SNS 콘텐츠 · 후킹 광고', '옴니채널 참여형 캠페인', 'AI 활용 내용', '최종 결과물 · 종이 네 장으로 이어지는 3박', '기대효과', '활용 방안', '마무리'];
+  const viewer = document.getElementById('viewer');
+  const track = document.getElementById('v-track');
+  const count = document.getElementById('v-count');
+  const closeBtn = document.getElementById('v-close');
+  const vTitle = document.getElementById('v-title');
+  const DECKS = {
+    hyodo: { title: '켄싱턴 효도상점 발표 자료', sub: "K-Tour LX 아이디어톤 최우수상 · 3인 팀 '불효자들'", label: '효도상점 발표 자료', src: (n) => `slides/slide${n}.jpg`, w: 1280, h: 720, items: SLIDES },
+    guide: { title: '아이쿠스 가이드북 · 류블랴나 편', sub: '유럽 여행 초보자용 도시 가이드북', label: '아이쿠스 가이드북', src: (n) => `guide/page${n}.jpg`, w: 900, h: 1273,
+      items: ['표지', '목차', '류블랴나 도시 정보', '추천 여행 코스', '추천 명소 · 랜드마크', '추천 명소 · 성당', '광장 및 공원', '박물관 및 예술 센터', '교통수단 정보', '추천 맛집 1–2', '추천 맛집 3–4', '추천 쇼핑 리스트'] },
+    hayoung: { title: '하영 고라보게 결과 발표', sub: 'K-Tour LX 콘텐츠 마케팅 과정 · 6팀 중 최우수상', label: '하영 고라보게 발표 자료', src: (n) => `deck/hayoung/s${n}.jpg`, w: 1280, h: 720,
+      items: ['표지 · 1팀 성과 보고서', '한 장 요약 · 엽서로 많이 써 보게 한 웹진', '한 장 요약 · 유입에서 바이럴까지', '목차', '제주에 왔는데, 중국어만 들린다면?', '주제 선정 · 가장 제주다운 것은 제주어', '배경 · 제주어가 사라지고 있다', '목적은 지키기, 수단은 엽서', '왜 엽서일까요?', '초기 페르소나 · 27세 여성', '웹진 소개 · 제주어 엽서 사이트', 'PC와 모바일, 같은 흐름으로', '엽서가 끝인가? · 지도와 인터뷰', '외국인용 영어 페이지 · Honjeo! Jeju', '단계마다 AI를 썼다', '광고 3단계 집행', '목표 대비 결과 · 7개 중 6개 달성', '후킹형 vs 제주어 편지형', '인사이트 1 · 클릭률 1위, 체류 0.2초', '인사이트 2 · 후킹형을 끄고 편지형으로', '진짜 페르소나 · 18~24세 여성', 'NEXT STEP · 저장을 작성으로', '팀 소개 · 다섯 명', 'Q&A'] },
+    jtb: { title: '롯데JTB 복리후생 제안', sub: '머니투데이 대기업 실무협업 대상 · 1팀 복리후생조 · 2023', label: '롯데JTB 발표 자료', src: (n) => `deck/jtb/s${n}.jpg`, w: 1280, h: 720,
+      items: ['표지 · 롯데JTB 1팀 복리후생 제안', '목차', 'MZ세대를 위한 복리후생', '미션 · MZ세대를 위한 복리후생 제도', '롯데JTB 기업 리뷰 분석', '설문 · 선호·비선호 복리후생 (107명)', 'MZ세대 밀착 인터뷰', '제안 아이디어 4분야', '자기계발 · 버킷리스트·자격증 지원', '자기계발 · 롯데 사이버 연수원', '차별화 · 원가 판매·사내 공모전', '차별화 · 롯데손해보험 특약', '우수 인력 · 구독경제·생활 지원', '우수 인력 · SNS 부업', '우수 인력 · 웰컴키트', '세대 융합 · 창립기념일·프리보딩', '세대 융합 · 휴게 공간', '세대 융합 · 플레이샵', '기대 효과', '한 줄 요약 · 1인당 약 150만 원', 'QnA', 'THANK YOU'] },
+    kac: { title: '한국공항공사 동화 패러디 인스타툰', sub: '머니투데이 대기업 실무협업 우수상 · 2팀 3조 최종기획안', label: '한국공항공사 발표 자료', src: (n) => `deck/kac/s${n}.jpg`, w: 1280, h: 720,
+      items: ['표지 · 동화 패러디 인스타툰', '목차', '1 제안 배경', '국내 공항의 낮은 인지도·이용률', '누구나 읽어 본 동화', '왜 인스타툰인가', '공사 인스타그램 채널 분석', '패러디 선정 이유', '2 구현 방식', '콘텐츠 소개', '스토리보드 · 아기 포티 삼형제 1', '스토리보드 · 아기 포티 삼형제 2', '스토리보드 · 토끼와 거북이 1', '스토리보드 · 토끼와 거북이 2', '제작 예시 1–2', '제작 예시 3–4', '제작 예시 5–6', '제작 예시 7–8', '제작 예시 9–10', '추후 계획 · 시리즈와 인쇄물', '굿즈 · 만년 다이어리', '굿즈 · 미니 캐리어', '굿즈 · 여행 꿀팁 KIT', '3 예산안', '예산안 · 3가지 안', '4 기대 효과', '정성적 목표', '정량적 목표'] },
+    manwon: { title: '만원의 제주 성과 자료', sub: '2026 제주관광 빅데이터 활용사례 공모전 · 3인 팀', label: '만원의 제주 발표 자료', src: (n) => `deck/manwon/s${n}.jpg`, w: 1280, h: 720,
+      items: ['표지 · 성과 증빙자료', '프로젝트 개요', '데이터 구축 과정', '184곳 메뉴 구성', '웹진 구성', '만원 맛집 지도', '같은 메뉴, 최대 25% 저렴', '공개 당일 소개 릴스', '홍보 채널 도달력', '이용자가 올린 만원 숨맛소', '세 방향의 활용 가치', '향후 개선 방향', '감사합니다'] },
+    naver: { title: '[밴쿠버 숙소 어디 잡을까?] 가스타운', sub: 'NAVER 여행플러스 CP 16기 · 10회차 · 글·사진 다라밍', label: 'NAVER 여행플러스 연재 글', src: (n) => `deck/naver/s${n}.jpg`, w: 900, h: 1273,
+      items: ['가스타운의 역사 · 스팀 시계', '스팀 시계 · 주막 · 치안'] },
+  };
+  let deck = '';
+  const items = () => DECKS[deck].items;
+  const buildDeck = (key) => {
+    if (deck === key) return;
+    deck = key;
+    const D = DECKS[key];
+    vTitle.textContent = D.title;
+    const sub = document.createElement('span');
+    sub.textContent = D.sub;
+    vTitle.appendChild(sub);
+    closeBtn.setAttribute('aria-label', `${D.label} 닫기`);
+    track.innerHTML = D.items.map((t, i) => {
+      const n = String(i + 1).padStart(2, '0');
+      return `<figure class="v-slide"><img src="${D.src(n)}" alt="${D.label} ${i + 1}쪽: ${t}" width="${D.w}" height="${D.h}" loading="lazy" decoding="async"><figcaption>${n} · ${t}</figcaption></figure>`;
+    }).join('');
+  };
+  let lastFocus = null;
+  const current = () => Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+  const update = () => { if (deck) count.textContent = `${Math.min(current() + 1, items().length)} / ${items().length}`; };
+  const go = (i, smooth) => {
+    const n = Math.max(0, Math.min(items().length - 1, i));
+    track.scrollTo({ left: n * track.clientWidth, behavior: smooth && !reduce ? 'smooth' : 'auto' });
+  };
+  const openViewer = (i, key = 'hyodo') => {
+    lastFocus = document.activeElement;
+    buildDeck(DECKS[key] ? key : 'hyodo');
+    viewer.hidden = false;
+    document.body.style.overflow = 'hidden';
+    go(i, false);
+    update();
+    closeBtn.focus();
+  };
+  const closeViewer = () => {
+    viewer.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  };
+  closeBtn.addEventListener('click', closeViewer);
+  document.getElementById('v-prev').addEventListener('click', () => go(current() - 1, true));
+  document.getElementById('v-next').addEventListener('click', () => go(current() + 1, true));
+  track.addEventListener('scroll', update, { passive: true });
+  viewer.addEventListener('click', (e) => { if (e.target === viewer || e.target.classList.contains('v-slide')) closeViewer(); });
+  // 4) 경험 마인드맵 연결선 (넓은 화면에서만)
+  const mm = document.getElementById('mm');
+  const mmSvg = mm.querySelector('.mm-lines');
+  const mmPhoto = mm.querySelector('.mm-photo');
+  const f1 = (n) => n.toFixed(1);
+  const curve = (x1, y1, x2, y2, c, w) => {
+    const mx = (x1 + x2) / 2;
+    return `<path d="M${f1(x1)},${f1(y1)} C${f1(mx)},${f1(y1)} ${f1(mx)},${f1(y2)} ${f1(x2)},${f1(y2)}" stroke="${c}" stroke-width="${w}"/>`;
+  };
+  const drawMap = () => {
+    if (getComputedStyle(mmSvg).display === 'none') { mmSvg.innerHTML = ''; return; }
+    const M = mm.getBoundingClientRect();
+    mmSvg.setAttribute('viewBox', `0 0 ${f1(M.width)} ${f1(M.height)}`);
+    const P = mmPhoto.getBoundingClientRect();
+    const cx = P.left + P.width / 2 - M.left, cy = P.top + P.height / 2 - M.top, r = P.width / 2;
+    let out = '';
+    mm.querySelectorAll('.branch').forEach((b) => {
+      const left = b.classList.contains('left');
+      const c = getComputedStyle(b).getPropertyValue('--c').trim();
+      const H = b.querySelector('.hub').getBoundingClientRect();
+      const hx = (left ? H.right : H.left) - M.left, hy = H.top + H.height / 2 - M.top;
+      const a = Math.atan2(hy - cy, hx - cx);
+      out += curve(cx + r * Math.cos(a), cy + r * Math.sin(a), hx, hy, c, 3);
+      const ox = (left ? H.left : H.right) - M.left;
+      b.querySelectorAll('.leaf').forEach((l) => {
+        const L = l.getBoundingClientRect();
+        out += curve(ox, hy, (left ? L.right : L.left) - M.left, L.top + L.height / 2 - M.top, c, 2);
+      });
+    });
+    mmSvg.innerHTML = out;
+  };
+  const mmObs = new ResizeObserver(drawMap);
+  mmObs.observe(mm);
+  window.addEventListener('load', drawMap);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawMap);
+
+  // 5) 경험 정리표 내용 패널
+  const SHEET = 'https://claude.ai/artifact/6wqsdkMASBdrx1UogYdZ7x';
+  const IN_CLAUDE = /(^|\.)claudeusercontent\.com$/.test(location.hostname);
+  const CATS = {
+    plan: { name: '기획·실행력', c: '#C2412A' },
+    cust: { name: '고객 이해력', c: '#13805C' },
+    comm: { name: '전달력', c: '#8A3FD6' },
+    glob: { name: '글로벌 커뮤니케이션', c: '#1F6CB0' },
+  };
+  // 기록 → 기록가치(숫자) → 역량 → 역량가치(활용). 숫자는 지어내지 않고, 이미 한 행동을 센 것만.
+  const EXP = {
+    ai: { cat: "plan", title: "도구 · AI", meta: "K-Tour LX 콘텐츠 마케팅 과정에서 익히고 프로젝트에 적용", one: "AI 도구 22개로 리서치부터 웹 배포까지 직접 해 봤습니다.",
+      rec: ["STIC 프롬프트로 시장조사 → 리뷰 → VP → 페르소나 → USP 단계별 도출", "Claude Code로 사이트 클론·캐러셀 에이전트 체인·슬랙봇·메일 자동화 제작", "Google Flow·Suno·클로바더빙으로 제주 원담 설명 쇼츠 제작", "Claude Code로 영문 웹진 'Honjeo! Jeju' 코딩"],
+      val: [["22개", "직접 써 본 AI·제작 도구", "빈도·규모"], ["5단계", "시장조사 → USP 도출 프롬프트", "빈도·규모"], ["12 → 1", "Claude로 펼친 기획안을 캠페인 하나로", "성장·개선"], ["Vercel 배포", "기획부터 웹 배포까지 코딩 없이", "시간·기간"]],
+      cap: ["목적에 맞게 AI에게 일을 시키는 프롬프트 설계", "AI 결과물을 고르고 고치는 검수력", "노코드 웹 제작·업무 자동화"],
+      use: ["여행상품 기획: 시장조사·페르소나·USP를 빠르게 정리", "MICE: 참가 신청 페이지·안내 메일 자동화", "여객 서비스: 다국어 안내문·FAQ 초안 제작"],
+      },
+    kensington: { cat: "plan", title: "켄싱턴 효도상점", meta: "K-Tour LX 아이디어 해커톤 · 3인 팀 '불효자들' 팀장·PM · 2026.11", one: "이틀 동안 나온 기획안 12개를 3박 캠페인 하나로 모아 최우수상을 받았습니다.", img: "slides/slide01.jpg", wide: true,
+      rec: ["2026.11.11–12 · 1박 2일 해커톤 · 3인 팀 팀장·PM", "30대 193명 등 5개 기관 자료로 타깃 '부모님과 첫 3박을 떠나는 미혼 30대' 설정", "한림·중문·서귀포 3개 지점을 잇는 3박 오프라인 로드맵 설계"],
+      val: [["12 → 1", "기획안을 캠페인 하나로", "성장·개선"], ["5,887곳", "제주 장소 데이터로 3박 코스·가이드북 15종", "빈도·규모"], ["최우수상", "K-Tour LX 아이디어톤", "평가·신뢰"]],
+      cap: ["타깃 한 사람으로 메시지를 좁히는 기획력", "팀 PM: 일정·역할 조율과 결정", "AI 리서치를 고르고 다듬는 판단력"],
+      use: ["여행상품 기획: 기존 상품에 이야기를 입힌 시즌 패키지", "호텔·리조트 마케팅: 온라인 참여 → 현장 경험 캠페인", "MICE: 짧은 기간 안에 결과물을 내는 PM"],
+      links: [{ label: "발표 자료 보기", slide: 0 }] },
+    hayoung: { cat: "plan", title: "하영 고라보게", meta: "한경×이랜드 K-Tour LX 콘텐츠 마케팅 과정 1기 · 6팀 중 최우수상 · 2026.09–11", one: "영문 웹진 'Honjeo! Jeju'를 단독 기획하고 팀과 9일 만에 웹진 6페이지를 게재해, 6팀 중 최우수상과 사용자 2,965명(목표의 3배)을 얻었습니다.", img: "img/hayoung-cover.jpg",
+      rec: ["2026.09–11 · K-Tour LX 콘텐츠 마케팅 과정 1기 · 6팀 중 최우수상", "영문 웹진 'Honjeo! Jeju' 단독 기획·제작 (Claude Code)", "인터뷰 대상자 7명 직접 섭외 (공식기관 3곳 포함), 현장 인터뷰 진행", "체크리스트·휴대폰 화면 기준 전체 페이지 검수, 최종 발표"],
+      val: [["7명", "직접 섭외한 인터뷰이 · 공식기관 3곳", "협업·네트워크"], ["9일 · 6페이지", "웹진 제작부터 게재까지", "시간·기간"], ["2,965명", "웹진 활성 사용자 (목표 1,000명)", "성장·개선"], ["17.1만", "SNS 오가닉 조회 (목표 5,000회)", "성장·개선"]],
+      cap: ["외부 기관 섭외·일정 조율", "팀 일정 관리와 품질 검수", "인터뷰를 콘텐츠로 엮는 기획력"],
+      use: ["MICE: 연사·기관 섭외와 일정 조율", "관광 마케팅: 현장 인터뷰 기반 브랜드 콘텐츠", "여행상품 기획: 지역 문화를 상품 이야기로"],
+      links: [{ label: "발표 자료 보기", slide: 0, deck: "hayoung" }, { label: "웹진 보기 ↗", href: "https://lxwebzine.hankyung.com/2026-1/team1/" }, { label: "기사 보기 ↗", href: "https://www.hankyung.com/article/202610191003O" }] },
+    lottejtb: { cat: "plan", title: "롯데JTB 복리후생", meta: "머니투데이 대기업 실무협업 · 1팀 팀장 · 2023.08–11", one: "MZ세대 107명에게 묻고 현직자 4명을 인터뷰해, 14개 복리후생 제도로 공모전 대상을 받았습니다.", img: "img/jtb-cover.jpg", wide: true,
+      rec: ["2023.08–11 · 머니투데이 대기업 실무협업 · 1팀 팀장", "4개 조 운영, 사전질문지 취합, 사업지원비 집행계획(110만 원) 작성", "잡플래닛·블라인드 리뷰로 복지 부족 문제 도출", "기업 미팅 2회 피드백을 반영해 운영 기준까지 보완"],
+      val: [["107명", "MZ세대 설문 · 현직자 인터뷰 4명", "협업·네트워크"], ["14개", "4개 분야 복리후생 제도", "빈도·규모"], ["약 150만 원", "1인당 연 예산까지 설계", "비용·예산"], ["대상", "머니투데이 기획·마케팅 공모전", "평가·신뢰"]],
+      cap: ["설문·인터뷰로 니즈를 찾는 고객 조사", "비용까지 계산하는 실행 기획", "4개 조를 이끈 팀 리딩"],
+      use: ["여행상품 기획: 설문으로 선호를 확인하고 패키지 구성", "기업 인센티브·MICE: 고객층별 혜택과 예산 산정", "B2B 제안: 데이터로 설득하는 제안서"],
+      links: [{ label: "발표 자료 보기", slide: 0, deck: "jtb" }] },
+    kac: { cat: "plan", title: "한국공항공사 인스타툰", meta: "머니투데이 대기업 실무협업 · 2팀 3조 · 홍보실 실무 2023.08–11", one: "공항 14곳 데이터로 지방공항 8곳을 골라, 마스코트 '포티' 인스타툰과 굿즈로 우수상을 받았습니다.", img: "img/kac-cover.jpg", wide: true,
+      rec: ["2023.08–11 · 한국공항공사 홍보실 실무활동 · 2팀 3조", "공항 인근 관광자원·팝업스토어·항공샷 트렌드 조사", "동화 패러디 스토리보드, 무안공항 편 스토리텔링·콘티 제작", "기업 피드백을 반영해 굿즈 구성과 실행안 구체화"],
+      val: [["14 → 8곳", "데이터로 고른 지방공항 (연 이용객 40만 명 미만)", "빈도·규모"], ["20컷", "인스타툰 2편 (작가 2명 × 10컷)", "빈도·규모"], ["2종", "엽서·다이어리 굿즈 실물", "빈도·규모"], ["우수상", "머니투데이 기획·마케팅 공모전", "평가·신뢰"]],
+      cap: ["데이터로 타깃 고르기", "캐릭터·스토리 콘텐츠 기획", "기업 피드백을 반영한 실행안"],
+      use: ["여객운송(공항·항공) 홍보: 공항·노선 인지도 콘텐츠", "관광 마케팅: 캐릭터 IP 굿즈와 SNS 연계", "공공·관광기관 SNS 콘텐츠 기획"],
+      links: [{ label: "발표 자료 보기", slide: 0, deck: "kac" }] },
+    manwon: { cat: "cust", title: "만원의 제주", meta: "2026 제주 관광 데이터 활용사례 공모전 · 3인 팀 · 2026.10–11", one: "외식물가 리포트 6편으로 '제주는 비싸다'는 통념을 확인하고, 만 원 이하 가성비 업체 227곳을 지도로 만들었습니다.", img: "img/manwon-cover.jpg",
+      rec: ["2026.10–11 · 제주 관광 데이터 활용사례 공모전 · 3인 팀", "제주 외식물가 리포트 6편 분석", "광고성 후기가 적은 카카오맵 후기로 가성비 업체 선별", "릴스로 웹진 홍보"],
+      val: [["6편", "분석한 외식물가 리포트", "빈도·규모"], ["2.2%", "1년간 한 끼 가격 상승 (통념과 다른 결과)", "성장·개선"], ["227곳", "밥집 184곳 + 카페 43곳", "빈도·규모"], ["+28%", "릴스 홍보로 높인 웹진 방문율", "성장·개선"]],
+      cap: ["데이터로 고객 인식(통념) 검증", "출처를 가려 읽는 정보 선별력", "숏폼으로 유입 만들기"],
+      use: ["여행상품 기획: 가성비 맛집·코스 큐레이션", "관광 마케팅: 데이터로 여행지 이미지 개선", "여객 서비스: 도착 여행자용 실속 정보 안내"],
+      links: [{ label: "발표 자료 보기", slide: 0, deck: "manwon" }, { label: "웹진 보기 ↗", href: "https://jaehyunsong77.github.io/manwon-jeju/" }] },
+    icoos: { cat: "cust", title: "아이쿠스 마케팅 크루", meta: "유럽 세미패키지 여행사 아이쿠스 · SNS 마케팅 크루 · 2024.03–08", one: "크루와 함께 7개 기수 280명 정원을 모두 채우고, 6개국 가이드북을 만들었습니다.", img: "img/exp/icoos.jpg",
+      rec: ["2024.03–08 · SNS 마케팅 크루 (6개월)", "에브리타임 홍보 20건 · 전단지 1,000장 배포", "유럽 여행 초보자용 6개국 도시별 가이드북 제작 (도시 소개·코스·명소·교통·맛집·쇼핑)", "유럽 드리머즈 출정식 기획·인솔, '캐리어 싸는 법' 부스 운영"],
+      val: [["280명", "7개 기수 정원 100% 충원", "빈도·규모"], ["6개국", "도시별 가이드북", "빈도·규모"], ["20건 · 1,000장", "에브리타임 홍보 · 전단지", "빈도·규모"], ["6개월", "크루 활동", "시간·기간"]],
+      cap: ["온·오프라인 통합 홍보", "여행 초보자 눈높이의 안내 콘텐츠", "행사(출정식) 기획과 현장 운영"],
+      use: ["여행사 모객: 단체 상품 모집 홍보", "MICE·행사: 출정식·설명회 현장 운영", "여행상품: 출발 전 안내 가이드북"],
+      links: [{ label: "가이드북 보기 · 류블랴나 편", slide: 0, deck: "guide" }, { label: "PDF로 보기 ↗", href: "files/icoos-guidebook-ljubljana.pdf", file: true }] },
+    pretty: { cat: "cust", title: "프리티 캐나다 앰버서더", meta: "현지 리포터 · 2025.04–12", one: "캐나다 유학생 니즈를 카드뉴스 6편으로 풀어 2025년 7월 우수 앰버서더로 선정됐습니다.", img: "img/exp/pretty-cert.jpg", fit: "contain",
+      rec: ["2025.04–12 · 프리티 캐나다 앰버서더 1기 · 현지 리포터", "유학생 대상 통신·생활 정보 직접 취재", "블로그·인스타그램 카드뉴스 제작 (퀘벡 여행기, eSIM 개통 후기 등)", "사용 경험 기반 장단점 분석과 마케팅 아이디어 제안"],
+      val: [["6편", "카드뉴스 제작", "빈도·규모"], ["우수 선정", "2025년 7월 우수 앰버서더 (CAD $50 리워드)", "평가·신뢰"], ["1기 수료", "공식 수료증 (2025.11.27)", "평가·신뢰"], ["9개월", "현지 리포터 활동", "시간·기간"]],
+      cap: ["고객 사용 경험에서 인사이트 찾기", "어려운 정보를 쉽게 전하는 카드뉴스", "현지 관점의 마케팅 제안"],
+      use: ["해외여행 상품: 현지 통신·생활 정보 안내", "여객 서비스: 출국 전 준비 안내 콘텐츠", "관광 마케팅: 후기·리뷰형 콘텐츠"],
+      links: [{ label: "쓴 글 보러가기 ↗", href: "https://m.blog.naver.com/touram0701/223929480219" }] },
+    wishes: { cat: "cust", title: "위시즈", meta: "스타트업 마케팅 어시스턴트 2기 · 2023.10–2024.01", one: "공감형 릴스 3.5만 조회로 1주일 만에 팔로워 400명을 늘렸습니다.", img: "img/exp/wishes.jpg",
+      rec: ["2023.10–2024.01 · 스타트업 위시즈 마케팅 어시스턴트 2기", "10·20대 여성 타깃의 '소원을 들어주는 굿즈' 컨셉 설계", "소원부적·키링·스티커·캘린더 등 굿즈와 박스 도안", "GA 분석·앱 사용성 테스트, 비건·업사이클 브랜드 제휴 제안"],
+      val: [["3.5만", "감성 스토리 릴스 조회", "성장·개선"], ["+400명", "1주일 만에 늘어난 팔로워", "성장·개선"], ["9곳", "제휴(MOU) 제안 브랜드", "협업·네트워크"], ["3단계", "받는 사람 규모별 굿즈 구성 (1,000 · 300 · 4명)", "빈도·규모"]],
+      cap: ["감성 스토리 마케팅", "스타트업의 빠른 실행", "제휴 제안·협업 기획"],
+      use: ["관광 굿즈·기념품 기획", "신규 상품 인지도 캠페인", "기업 고객 규모별 패키지 구성"] },
+    mysns: { cat: "comm", title: "MY SNS", meta: "인스타그램 2개 · 블로그 1개 · 1인 운영 중", one: "팔로워 491명 계정의 릴스가 368만 회 재생됐고, 세 채널 누적 조회는 770만 회를 넘었습니다.",
+      rec: ["인스타그램 2개·블로그 1개 1인 운영 (기획·촬영·편집·분석)", "@korean_with_ram: 외국인에게 진짜 한국을 소개하는 릴스", "@da._.raming: 18개국 48개 도시 여행 가이드 릴스", "네이버 블로그: 환전·택시·공항 등 검색형 여행 정보"],
+      val: [["770만+", "3개 채널 누적 조회", "빈도·규모"], ["368만", "단일 릴스 최고 (팔로워 491명 계정)", "성장·개선"], ["0.39% → 3.43%", "제주 SNS 팔로우 전환율 (약 9배)", "성장·개선"], ["14.4만", "블로그 누적 방문 (이웃 2,151)", "빈도·규모"]],
+      cap: ["검색·저장되는 정보 기획", "숏폼 촬영·편집", "인사이트 지표 분석"],
+      use: ["관광 마케팅: 여행 정보 숏폼·블로그 운영", "여행상품 홍보: 검색 키워드 기반 콘텐츠", "외국인 대상 한국 관광 홍보"],
+      links: [{ label: "@korean_with_ram ↗", href: "https://www.instagram.com/korean_with_ram/" }, { label: "@da._.raming ↗", href: "https://www.instagram.com/da._.raming/" }, { label: "네이버 블로그 ↗", href: "https://blog.naver.com/touram0701" }] },
+    article: { cat: "comm", title: "한국경제신문 기사", meta: "K-Tour LX 과정 인턴 기자 · 2026.10.19", one: "직접 섭외한 모슬포 독립서점 인터뷰가 한국경제에 실렸습니다.", img: "img/article-cover.jpg",
+      rec: ["2026.10 · 「할머니가 말하고 어머니가 받아 적고 손녀가 건넨 책」", "독립서점 '어나더 페이지' 신의주 대표 인터뷰 섭외·진행", "인터뷰 기사 작성·수정"],
+      val: [["1건", "한국경제신문 게재 (2026.10.19)", "평가·신뢰"], ["5인", "인턴 기자 공동 바이라인", "협업·네트워크"]],
+      cap: ["인터뷰 섭외와 질문 설계", "취재 내용을 기사로 정리하는 글쓰기"],
+      use: ["관광 홍보: 보도자료·현장 취재 기사", "MICE: 행사 스토리 기록과 홍보", "브랜드 콘텐츠: 인터뷰형 콘텐츠"],
+      links: [{ label: "기사 보기 ↗", href: "https://www.hankyung.com/article/202610191003O" }] },
+    naver: { cat: "comm", title: "NAVER 여행플러스", meta: "어플프렌즈 CP 16기 · 필명 다라밍 · 2025.01–12", one: "중간 점검에서 콘텐츠 방향이 잘 맞는다는 내부 평가를 받아, 여행플러스가 먼저 발행 주기를 격주 1회에서 주 1회로 늘리자고 제안했습니다.", img: "img/exp/naver-mail.jpg", fit: "contain",
+      rec: ["2025.01–12 · NAVER 여행플러스 콘텐츠 프로바이더", "2025.09.18 여행플러스 공식 메일: CP 16기 중간 점검에서 흔하지 않은 여행지 소개가 큰 도움이 된다는 평가와 함께 주 1회 발행 제안", "밴쿠버·캘거리·몬트리올·뉴욕 등 현지 여행 콘텐츠 정기 발행", "'밴쿠버 숙소 어디 잡을까?' 시리즈 (역사·명소·맛집·교통·치안·마트)", "트렌드·검색 키워드로 주제 선정"],
+      val: [["2배", "공식 발행 주기 (격주 1회 → 주 1회, 2025.09 제안)", "빈도·규모"], ["27회차", "2025년 연재 회차", "빈도·규모"], ["우수 선정", "활동 우수회원 (플랫폼 내부 평가)", "평가·신뢰"]],
+      cap: ["플랫폼 가이드라인에 맞춘 글쓰기", "검색 키워드 기반 주제 선정", "꾸준한 마감 관리"],
+      use: ["여행상품 홍보 콘텐츠 정기 발행", "목적지 소개 가이드 작성", "관광 플랫폼 콘텐츠 운영"],
+      links: [{ label: "연재한 글 보러가기 (10회차 가스타운)", slide: 0, deck: "naver" }] },
+    brunch: { cat: "comm", title: "여행 에세이 · 브런치 연재", meta: "『Hello, 나의 여행은 사람으로 채워진다』 · 출간 기획 2026.06 · 브런치 연재 2026.08–09", one: "홀로 떠난 길에서 먼저 'Hello'를 건네 만난 사람들 이야기를 여행 에세이로 기획하고, 브런치에 8편을 연재했습니다.", img: "img/book-cover.jpg", fit: "contain",
+      rec: ["2026.06 · 여행 에세이 출간기획서 작성 — '여행지는 검색할 수 있지만, 사람은 검색할 수 없다'", "캐나다·미국·남미·멕시코에서 만난 사람들의 에피소드로 목차 구성", "생일날 기차표를 선물한 헬렌 할머니, 공항까지 데려다준 멕시코 아저씨처럼 먼저 건넨 인사로 이어진 인연을 기록", "2026.08–09 · 브런치에 「나는 여행지보다 사람을 기억한다」 8편 연재"],
+      val: [["8편", "브런치 연재 에세이", "빈도·규모"], ["3권", "경쟁 도서와 비교해 차별점 정리", "빈도·규모"], ["18개국 48개 도시", "4년간 홀로 다니며 쌓은 기록", "시간·기간"]],
+      cap: ["경험을 이야기로 쓰는 글쓰기", "독자를 정하고 차별점을 찾는 기획", "SNS·커뮤니티·북페어로 잇는 홍보 설계"],
+      use: ["여행상품 스토리텔링: 상품 소개·여행기", "관광 마케팅: 인물 중심 후기·사례 콘텐츠", "MICE·행사: 참가자 이야기로 만드는 홍보"],
+      note: "책 속 이야기를 브런치에 먼저 연재하고 있어요.",
+      links: [{ label: "브런치 연재 읽기 ↗", href: "https://brunch.co.kr/@5696c18d0c5f41d" }] },
+    honjeo: { cat: "glob", title: "Honjeo! Jeju", meta: "하영 고라보게 영문판 · 단독 기획·제작 · 2026.10", one: "K-드라마·K-팝 동선 32곳에 제주어 39개를 얹은 영문 웹진을 Claude Code로 직접 만들었습니다.", img: "img/honjeo-cover.jpg",
+      rec: ["2026.10 · 외국인용 영문 웹진 단독 기획·제작", "K-드라마 촬영지 7곳 코스 · K-팝 방문지 25곳 지도 · K-뷰티 매장 29곳", "외국인 여행자용 제주어 회화책 (7개 상황, 9쪽 PDF)", "Claude Code로 코딩"],
+      val: [["32곳 · 39개", "K-컬처 동선에 얹은 제주어", "빈도·규모"], ["77개", "회화책 표현 (말할 71 · 들을 6)", "빈도·규모"], ["286명", "글로벌 활성 사용자 (목표 100명)", "성장·개선"]],
+      cap: ["외국인 관점의 콘텐츠 설계", "영문 여행 정보 작성", "AI 노코드 웹 제작"],
+      use: ["인바운드 여행상품: 외국인용 K-컬처 코스", "여객 서비스: 외국인 승객용 다국어 안내", "MICE: 해외 참가자용 행사 안내 페이지"],
+      links: [{ label: "웹진 보기 ↗", href: "https://lxwebzine.hankyung.com/2026-1/team1/en/" }] },
+    vic: { cat: "glob", title: "VIC 밴쿠버", meta: "밴쿠버 유학 · 2025.03–12 (약 9개월)", one: "밴쿠버에서 약 9개월 공부하며 다국적 반 친구들에게 영어 투어를 직접 진행하고 디플로마를 받았습니다.", img: "img/exp/vic.jpg",
+      rec: ["2025.03–12 · 캐나다 밴쿠버 VIC", "차이나타운·개스타운을 잇는 밴쿠버 투어 기획 (직접 찾은 맛집 포함)", "영어 스크립트를 쓰고 반복 연습해 다국적 반 친구들에게 투어 진행"],
+      val: [["약 9개월", "영어 환경 유학", "시간·기간"], ["2곳", "투어 코스 거점 (차이나타운·개스타운)", "빈도·규모"], ["Diploma", "Customer Service Professional (2025.10.17)", "평가·신뢰"]],
+      cap: ["영어 투어 진행과 설명력", "관광객 관점의 코스 설계", "다문화 커뮤니케이션"],
+      use: ["인바운드·아웃바운드 여행상품 기획", "여객 서비스: 영어 고객 응대", "MICE: 해외 참가자 투어·프로그램 운영"] },
+    ciee: { cat: "glob", title: "CIEE 서울메이트", meta: "CIEE Seoul 서울메이트 · 인턴십 · 2024.08–12, 2026.03–07", one: "미국 교환학생 버디 프로그램과 공식 SNS를 두 차례 맡아, 채널 최고 반응(좋아요 110)을 냈습니다.", img: "img/exp/ciee-cert.jpg", fit: "contain",
+      rec: ["2024.08–12 · 2026.03–07 · CIEE Seoul 인턴 (2회)", "연세대 미국인 교환학생의 한국 생활 적응을 돕는 버디 프로그램·언어 멘토링", "공식 SNS 전담, 카드뉴스·릴스를 국문/영문으로 기획·제작", "영문 카드뉴스 'Advantages of Seoul Mate' 제작 (2024.10), CIEE Seoul 계정에 망원시장 투어 활동 소개 (2026.05)"],
+      val: [["110", "영문 병기 게시물 좋아요 (채널 최고)", "평가·신뢰"], ["2회", "인턴십 참여", "빈도·규모"], ["인턴십 수료증", "Certificate of Internship · Fall 2024 (2024.12.19)", "평가·신뢰"], ["100%", "영어 환경 협업", "협업·네트워크"]],
+      cap: ["영어로 일하는 커뮤니케이션", "외국인 타깃 콘텐츠 최적화", "다문화 조율"],
+      use: ["인바운드 관광: 외국인 고객 프로그램 운영", "여객 서비스: 외국인 승객 응대", "관광 마케팅: 국·영문 SNS 운영"],
+      links: [{ label: "CIEE Seoul 계정에 실린 활동 보기 ↗", href: "https://www.instagram.com/p/DYEhjHOEwqL/" }, { label: "직접 제작한 영문 카드뉴스 보러가기 ↗", href: "https://www.instagram.com/p/DAnA2lDvgGg/" }] },
+    seoulx: { cat: "glob", title: "Seoul X 서울버킷메이트", meta: "서울버킷메이트 2기 · 한국인 멘토 · 2026.07–08", one: "외국인 친구의 '첫 방문' 시선으로 만든 숏폼 9편이 6만 회 넘게 재생됐습니다.", img: "img/exp/seoulx-assembly.jpg", zoom: "img/exp/seoulx-assembly-full.jpg",
+      rec: ["2026.07–08 · Seoul X 서울버킷메이트 2기 · 한국인 멘토", "2:1 버킷데이트로 외국인 친구의 서울 버킷리스트를 함께하며 한국어 멘토링", "영어 자막 숏폼 기획·촬영, 'Korean Gen Z Slang' 시리즈 제작", "Seoul X 계정(@seoulx.korea)과 K-slang 릴스를 공동 게시하고, 2기 번개 모임 게시물에 함께 소개됨"],
+      val: [["9편 · 6만+", "숏폼 누적 조회", "빈도·규모"], ["2.1만", "남산타워 첫 방문 릴스 (최고)", "성장·개선"], ["186", "K-slang 릴스 좋아요 · @seoulx.korea 공동 게시 (저장 26 · 공유 8)", "평가·신뢰"]],
+      cap: ["외국인 시선으로 장소를 다시 보는 기획", "시리즈 포맷 운영", "영어 자막 숏폼 제작"],
+      use: ["인바운드 관광 홍보 숏폼", "외국인 대상 서울·지역 코스 기획", "관광기관 서포터즈·SNS 운영"],
+      links: [{ label: "영상 보러가기 ↗", href: "https://www.instagram.com/reel/Db23cZCx11E/" }, { label: "Seoul X 계정에 실린 활동 보기 ↗", href: "https://www.instagram.com/p/DcaQgAxErua/" }] },
+    teacher: { cat: "glob", title: "한국어 강사 · 고등부 국어 입시강사", meta: "신촌영재학원 한국어 강사 (현재) · 고등부 국어 입시학원 강사", one: "고등부 국어 입시강사로 수강생 100명을 모았고, 지금은 중국어권 학생에게 매 수업 자료를 AI로 만든 한·중 웹페이지로 전달합니다.", img: "img/exp/teacher.jpg", wide: true,
+      rec: ["현재 · 중국어권 학생 대상 한국어 수업 (한국어교원 2급 과정 수강 중)", "매 수업 자료를 AI로 웹페이지로 만들어 링크로 전달: TOPIK 대비 3 · 명절 문화 2 · 시사 읽기 1", "한·중 병기 자료에 채점·OMR·타이머, 단어 퀴즈, 발음 듣기 기능", "고등부 국어 입시 수업: 고전시가(상춘곡 등) 판서 강의", "국어 조교에서 고등부 국어 강사로, 강의력을 키우려 스피치 학원 수강"],
+      val: [["100명", "국어 강사 시절 수강생 (학생 추천·직접 모객)", "빈도·규모"], ["6종", "AI로 만든 수업 웹페이지", "빈도·규모"], ["600개", "30일 TOPIK 중급 어휘 웹 단어장", "빈도·규모"]],
+      cap: ["어려운 내용을 쉽게 푸는 설명력", "AI로 학습자 맞춤 자료를 빠르게 만드는 실행력", "다시 찾게 만드는 관계"],
+      use: ["여객·관광 서비스: 외국인 고객 다국어 안내", "MICE: 참가자 안내 웹페이지·사전 교육 자료", "여행상품: 고객 설명·상담 자료"],
+      links: [{ label: "수업자료 보러가기 ↗", href: "https://claude.ai/artifact/DpqC6K8sYcmK3SCg89JT9v" }] },
+  };
+  const exp = document.getElementById('exp');
+  const expCard = document.getElementById('exp-card');
+  const expBody = document.getElementById('exp-body');
+  const expClose = document.getElementById('exp-close');
+  let expLast = null;
+  const esc = (s) => String(s).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+  const lis = (arr) => arr.map((t) => `<li>${esc(t)}</li>`).join('');
+  const openExp = (id) => {
+    const d = EXP[id];
+    if (!d) return;
+    const cat = CATS[d.cat];
+    expCard.style.setProperty('--c', cat.c);
+    const hi = (s) => String(s).split(/(\d[\d.,]*\+?(?:만\+?)?(?:개국|개월|개|명|곳|편|꼭지|부|회차|회|%|배|일|건|장|컷|종|년|월|원|초|위|박)?)/g).map((p, i) => (i % 2 ? `<b>${esc(p)}</b>` : esc(p))).join('');
+    const col = (cls, title, inner) => `<div class="ef-col${cls}"><h4>${title}</h4>${inner}</div>`;
+    const flow = [];
+    if (d.rec) flow.push(col('', '기록', `<ul>${lis(d.rec)}</ul>`));
+    if (d.val) flow.push(col(' val', '기록가치', `<ul class="ef-val">${d.val.map(([n, t, k]) => `<li><b>${esc(n)}</b><span>${esc(t)}</span>${k ? `<i>${esc(k)}</i>` : ''}</li>`).join('')}</ul>`));
+    if (d.cap) flow.push(col('', '역량', `<ul>${lis(d.cap)}</ul>`));
+    if (d.use) flow.push(col(' use', '역량가치(활용)', `<ul>${lis(d.use)}</ul>`));
+    const links = (d.links || []).filter((l) => !(l.file && IN_CLAUDE)).map((l) => (l.slide !== undefined
+      ? `<button class="primary" type="button" data-slide="${esc(l.slide)}"${l.deck ? ` data-deck="${esc(l.deck)}"` : ''}>${esc(l.label)}</button>`
+      : `<a${l.file ? '' : ' class="primary"'} href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label)}</a>`));
+    const icls = [d.wide ? 'wide' : '', d.fit === 'contain' ? 'contain' : ''].filter(Boolean).join(' ');
+    const img = d.img ? `<button class="exp-img" type="button" data-zoom="${esc(d.zoom || d.img)}" aria-label="사진 크게 보기"><img src="${esc(d.img)}" alt=""${icls ? ` class="${icls}"` : ''}></button>` : '';
+    expBody.innerHTML = `<div class="exp-top${d.img ? '' : ' noimg'}">${img}<div><span class="exp-cat">${esc(cat.name)}</span><h3 class="exp-title" id="exp-title">${esc(d.title)}</h3><p class="exp-meta">${esc(d.meta)}</p><p class="exp-one">${hi(d.one)}</p></div></div><div class="exp-flow">${flow.join('<span class="ef-arrow" aria-hidden="true"></span>')}</div>${d.note ? `<p class="exp-note">${esc(d.note)}</p>` : ''}${links.length ? `<div class="exp-links">${links.join('')}</div>` : ''}`;
+    expLast = document.activeElement;
+    exp.hidden = false;
+    document.body.style.overflow = 'hidden';
+    expCard.scrollTop = 0;
+    expClose.focus();
+  };
+  const closeExp = () => {
+    exp.hidden = true;
+    document.body.style.overflow = '';
+    if (expLast) expLast.focus();
+  };
+  expClose.addEventListener('click', closeExp);
+  exp.addEventListener('click', (e) => { if (e.target === exp) closeExp(); });
+  const zoom = document.getElementById('zoom');
+  const zoomImg = document.getElementById('zoom-img');
+  let zoomLast = null;
+  const openZoom = (src) => { zoomLast = document.activeElement; zoomImg.src = src; zoom.hidden = false; document.getElementById('zoom-close').focus(); };
+  const closeZoom = () => { zoom.hidden = true; zoomImg.removeAttribute('src'); if (zoomLast) zoomLast.focus(); };
+  zoom.addEventListener('click', closeZoom);
+
+  // 6) 클릭 연결: 발표 자료(data-slide)와 경험 정리표 패널(data-exp)
+  document.addEventListener('click', (e) => {
+    const z = e.target.closest('[data-zoom]');
+    if (z) { openZoom(z.dataset.zoom); return; }
+    const s = e.target.closest('[data-slide]');
+    if (s) { exp.hidden = true; openViewer(parseInt(s.dataset.slide, 10) || 0, s.dataset.deck); return; }
+    const x = e.target.closest('[data-exp]');
+    if (x) openExp(x.dataset.exp);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (!zoom.hidden) closeZoom(); else if (!exp.hidden) closeExp(); else if (!viewer.hidden) closeViewer(); else setDrawer(false);
+      return;
+    }
+    if (viewer.hidden) return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1, true); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1, true); }
+  });
+}
+</script>
+</body>
+</html>

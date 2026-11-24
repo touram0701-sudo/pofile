@@ -1,0 +1,15 @@
+# 페이지에서 쓰지 않는 예전 이미지 (내 PC에만 보관하고 GitHub·Vercel에는 올리지 않음)
+img/thumb/
+img/profile.jpg
+img/exp/naver.jpg
+img/hayoung-interview.jpg
+img/hayoung-map.jpg
+img/manwon-map.jpg
+
+# 시스템 파일
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Vercel 로컬 설정
+.vercel
