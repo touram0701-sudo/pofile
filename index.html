@@ -523,7 +523,7 @@ footer{background:var(--ink);color:#fff;padding:56px 40px 44px;border-top:6px so
         <div class="mm-photo"><img src="img/profile-plain.jpg" alt="홍람빈" width="900" height="900" loading="lazy" decoding="async"></div>
         <strong>홍람빈</strong>
         <span>관광경영 · 18개국 48개 도시</span>
-        <a class="mm-sheet" href="https://claude.ai/artifact/6wqsdkMASBdrx1UogYdZ7x" target="_blank" rel="noopener">경험 정리표 전체 보기 ↗</a>
+        <a class="mm-sheet" href="sheet.html" target="_blank" rel="noopener">경험 정리표 전체 보기 ↗</a>
       </div>
       <div class="branch left b1" style="--c:#C2412A">
         <div class="hub"><b>기획·실행력</b><small>최우수상 2회 · 대상</small></div>
@@ -858,7 +858,7 @@ footer{background:var(--ink);color:#fff;padding:56px 40px 44px;border-top:6px so
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawMap);
 
   // 5) 경험 정리표 내용 패널
-  const SHEET = 'https://claude.ai/artifact/6wqsdkMASBdrx1UogYdZ7x';
+  const SHEET = 'sheet.html';
   const IN_CLAUDE = /(^|\.)claudeusercontent\.com$/.test(location.hostname);
   const CATS = {
     plan: { name: '기획·실행력', c: '#C2412A' },
@@ -974,7 +974,7 @@ footer{background:var(--ink);color:#fff;padding:56px 40px 44px;border-top:6px so
       val: [["100명", "국어 강사 시절 수강생 (학생 추천·직접 모객)", "빈도·규모"], ["6종", "AI로 만든 수업 웹페이지", "빈도·규모"], ["600개", "30일 TOPIK 중급 어휘 웹 단어장", "빈도·규모"]],
       cap: ["어려운 내용을 쉽게 푸는 설명력", "AI로 학습자 맞춤 자료를 빠르게 만드는 실행력", "다시 찾게 만드는 관계"],
       use: ["여객·관광 서비스: 외국인 고객 다국어 안내", "MICE: 참가자 안내 웹페이지·사전 교육 자료", "여행상품: 고객 설명·상담 자료"],
-      links: [{ label: "수업자료 보러가기 ↗", href: "https://claude.ai/artifact/DpqC6K8sYcmK3SCg89JT9v" }] },
+      },
   };
   const exp = document.getElementById('exp');
   const expCard = document.getElementById('exp-card');
